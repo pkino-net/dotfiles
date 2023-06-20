@@ -6,7 +6,7 @@ end
 
 vim.cmd('packadd vim-jetpack')
 
-return require('jetpack.packer').add {
+require('jetpack.packer').add {
   {'tani/vim-jetpack'},
   {'jonathanfilip/vim-lucius',
     config = function()
@@ -21,7 +21,11 @@ return require('jetpack.packer').add {
   {'williamboman/mason.nvim',
     config = function()
       require('plugins.mason')
-    end
+    end,
+    requires = {
+      'williamboman/mason-lspconfig.nvim',
+      'neovim/nvim-lspconfig'
+    }
   },
   {'scalameta/nvim-metals',
     requires = {'nvim-lua/plenary.nvim'}
