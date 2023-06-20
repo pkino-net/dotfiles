@@ -13,20 +13,19 @@ require('jetpack.packer').add {
       vim.cmd('colorscheme lucius')
     end
   },
-  {'williamboman/mason.nvim',
-    config = function()
-      require('plugins.mason')
-    end
-  },
-  {'williamboman/mason-lspconfig.nvim',
-    config = function()
-      require('plugins.mason-lspconfig')
-    end
-  },
   {'neovim/nvim-lspconfig',
     config = function()
       require('plugins.nvim-lspconfig')
     end
+  },
+  {'williamboman/mason.nvim',
+    config = function()
+      require('plugins.mason')
+    end,
+    requires = {
+      'williamboman/mason-lspconfig.nvim',
+      'neovim/nvim-lspconfig'
+    }
   },
   {'scalameta/nvim-metals',
     requires = {'nvim-lua/plenary.nvim'}
