@@ -6,21 +6,26 @@ end
 
 vim.cmd('packadd vim-jetpack')
 
-return require('jetpack.packer').add {
+require('jetpack.packer').add {
   {'tani/vim-jetpack'},
   {'jonathanfilip/vim-lucius',
     config = function()
       vim.cmd('colorscheme lucius')
     end
   },
-  {'neovim/nvim-lspconfig',
-    config = function()
-      require('plugins.nvim-lspconfig')
-    end
-  },
   {'williamboman/mason.nvim',
     config = function()
       require('plugins.mason')
+    end
+  },
+  {'williamboman/mason-lspconfig.nvim',
+    config = function()
+      require('plugins.mason-lspconfig')
+    end
+  },
+  {'neovim/nvim-lspconfig',
+    config = function()
+      require('plugins.nvim-lspconfig')
     end
   },
   {'scalameta/nvim-metals',
