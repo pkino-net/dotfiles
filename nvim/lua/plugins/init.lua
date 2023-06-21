@@ -13,6 +13,9 @@ require('jetpack.packer').add {
       vim.cmd('colorscheme lucius')
     end
   },
+  {'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  },
   {'neovim/nvim-lspconfig',
     config = function()
       require('plugins.nvim-lspconfig')
