@@ -27,7 +27,17 @@ require('jetpack.packer').add {
     end,
     requires = {
       'williamboman/mason-lspconfig.nvim',
-      'neovim/nvim-lspconfig'
+      'neovim/nvim-lspconfig',
+      'hrsh7th/cmp-nvim-lsp'
+    }
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('plugins.nvim-cmp')
+    end,
+    requires = {
+      'hrsh7th/cmp-nvim-lsp'
     }
   },
   {'scalameta/nvim-metals',
