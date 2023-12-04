@@ -7,4 +7,10 @@ if status is-interactive
     bind -M insert j "if commandline -P; commandline -f down-line; else; commandline -i j; end"
     bind -M insert h "if commandline -P; commandline -f backward-char; else; commandline -i h; end"
     bind -M insert l "if commandline -P; commandline -f forward-char; else; commandline -i l; end"
+
+    # change cursor shape in vi mode
+    set fish_cursor_default block
+    set fish_cursor_insert line
+    set fish_cursor_replace_one underscore
+    set fish_cursor_visual block
 end
