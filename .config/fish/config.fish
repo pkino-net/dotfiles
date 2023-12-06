@@ -16,4 +16,7 @@ if status is-interactive
 
     # select bobthefish color scheme
     set theme_color_scheme nord
+
+    # enable nerd font support in bobthefish
+    set -g theme_nerd_fonts yes
 end
