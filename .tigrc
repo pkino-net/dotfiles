@@ -10,3 +10,6 @@ bind generic G     move-last-line
 bind main    <C-r> !git rebase -i %(commit)
 bind generic <C-r> !git rebase -i %(commit) 
 
+# tmp commit
+bind status  T     !git commit -m 'tmp'
+
