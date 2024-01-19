@@ -19,4 +19,6 @@ if status is-interactive
 
     # enable nerd font support in bobthefish
     set -g theme_nerd_fonts yes
+
+    abbr --add dmemo nvim '~/Documents/daily_memo/'(date '+%Y-%m-%d')'.md'
 end
