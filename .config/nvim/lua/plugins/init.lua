@@ -23,6 +23,20 @@ require('jetpack.packer').add {
     end,
     requires = { 'nvim-tree/nvim-web-devicons' },
   },
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    config = function()
+      require('plugins.telescope')
+    end,
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+      'nvim-lua/plenary.nvim',
+      {
+        'nvim-telescope/telescope-fzf-native.nvim', run = 'make'
+      },
+    }
+  },
   {'neovim/nvim-lspconfig',
     config = function()
       require('plugins.nvim-lspconfig')
