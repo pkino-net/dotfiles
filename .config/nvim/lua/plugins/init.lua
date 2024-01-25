@@ -16,6 +16,13 @@ require('jetpack.packer').add {
   {'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   },
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('plugins.lualine')
+    end,
+    requires = { 'nvim-tree/nvim-web-devicons' },
+  },
   {'neovim/nvim-lspconfig',
     config = function()
       require('plugins.nvim-lspconfig')
