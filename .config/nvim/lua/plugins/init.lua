@@ -8,11 +8,7 @@ vim.cmd('packadd vim-jetpack')
 
 require('jetpack.packer').add {
   {'tani/vim-jetpack'},
-  {'jonathanfilip/vim-lucius',
-    config = function()
-      vim.cmd('colorscheme lucius')
-    end
-  },
+  {'jonathanfilip/vim-lucius'},
   {'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   },
