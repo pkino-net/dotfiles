@@ -19,3 +19,9 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep)
 vim.keymap.set('n', '<leader>fb', builtin.buffers)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags)
 
+local themes = require('telescope.themes')
+
+vim.keymap.set('n', '<leader>h', function()
+  builtin.help_tags(themes.get_ivy())
+end)
+
