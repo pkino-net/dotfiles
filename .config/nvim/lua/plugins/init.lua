@@ -29,9 +29,25 @@ require('jetpack.packer').add {
       'nvim-tree/nvim-web-devicons',
       'nvim-lua/plenary.nvim',
       {
-        'nvim-telescope/telescope-fzf-native.nvim', run = 'make'
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
+      },
+      {
+        'prochri/telescope-all-recent.nvim',
+        config = function()
+          require('telescope-all-recent').setup {}
+        end,
+        after = 'telescope.nvim',
+        requires = 'kkharji/sqlite.lua',
       },
     }
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      require('plugins.nvim-tree')
+    end,
+    requires = 'nvim-tree/nvim-web-devicons',
   },
   {'neovim/nvim-lspconfig',
     config = function()
