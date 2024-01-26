@@ -8,11 +8,7 @@ vim.cmd('packadd vim-jetpack')
 
 require('jetpack.packer').add {
   {'tani/vim-jetpack'},
-  {'jonathanfilip/vim-lucius',
-    config = function()
-      vim.cmd('colorscheme lucius')
-    end
-  },
+  {'beikome/cosme.vim'},
   {'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   },
@@ -22,6 +18,20 @@ require('jetpack.packer').add {
       require('plugins.lualine')
     end,
     requires = { 'nvim-tree/nvim-web-devicons' },
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    config = function()
+      require('plugins.telescope')
+    end,
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+      'nvim-lua/plenary.nvim',
+      {
+        'nvim-telescope/telescope-fzf-native.nvim', run = 'make'
+      },
+    }
   },
   {'neovim/nvim-lspconfig',
     config = function()
@@ -50,16 +60,4 @@ require('jetpack.packer').add {
   {'scalameta/nvim-metals',
     requires = {'nvim-lua/plenary.nvim'}
   },
-  {
-    'xiyaowong/transparent.nvim',
-    groups = { -- table: default groups
-      'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
-      'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
-      'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
-      'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
-      'EndOfBuffer',
-    },
-    extra_groups = {}, -- table: additional groups that should be cleared
-    exclude_groups = {}, -- table: groups you don't want to clear
-  }
 }
