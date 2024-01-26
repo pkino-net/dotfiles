@@ -70,10 +70,16 @@ require('jetpack.packer').add {
       require('plugins.nvim-cmp')
     end,
     requires = {
-      'hrsh7th/cmp-nvim-lsp'
+      'hrsh7th/cmp-nvim-lsp',
+      {
+        'L3MON4D3/LuaSnip',
+        tag = 'v1.*',
+        -- run = 'make install_jsregexp',
+      }
     }
   },
   {'scalameta/nvim-metals',
     requires = {'nvim-lua/plenary.nvim'}
   },
 }
+
