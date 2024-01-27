@@ -1,25 +1,20 @@
-local jetpackfile = vim.fn.stdpath('data') .. '/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
-local jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
-if vim.fn.filereadable(jetpackfile) == 0 then
-  vim.fn.system(string.format('curl -fsSLo %s --create-dirs %s', jetpackfile, jetpackurl))
-end
+vim.cmd('packadd packer.nvim')
 
-vim.cmd('packadd vim-jetpack')
-
-require('jetpack.packer').add {
-  {'tani/vim-jetpack'},
-  {'beikome/cosme.vim'},
-  {'nvim-treesitter/nvim-treesitter',
+require('packer').startup(function()
+  use 'wbthomason/packer.nvim'
+  use 'beikome/cosme.vim'
+  use({
+    'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
-  },
-  {
+  })
+  use({
     'nvim-lualine/lualine.nvim',
     config = function()
       require('plugins.lualine')
     end,
     requires = { 'nvim-tree/nvim-web-devicons' },
-  },
-  {
+  })
+  use({
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
     config = function()
@@ -41,20 +36,20 @@ require('jetpack.packer').add {
         requires = 'kkharji/sqlite.lua',
       },
     }
-  },
-  {
+  })
+  use({
     'nvim-tree/nvim-tree.lua',
     config = function()
       require('plugins.nvim-tree')
     end,
     requires = 'nvim-tree/nvim-web-devicons',
-  },
-  {'neovim/nvim-lspconfig',
+  })
+  use({'neovim/nvim-lspconfig',
     config = function()
       require('plugins.nvim-lspconfig')
     end
-  },
-  {'williamboman/mason.nvim',
+  })
+  use({'williamboman/mason.nvim',
     config = function()
       require('plugins.mason')
     end,
@@ -63,8 +58,8 @@ require('jetpack.packer').add {
       'neovim/nvim-lspconfig',
       'hrsh7th/cmp-nvim-lsp'
     }
-  },
-  {
+  })
+  use({
     'hrsh7th/nvim-cmp',
     config = function()
       require('plugins.nvim-cmp')
@@ -73,13 +68,21 @@ require('jetpack.packer').add {
       'hrsh7th/cmp-nvim-lsp',
       {
         'L3MON4D3/LuaSnip',
-        tag = 'v1.*',
-        -- run = 'make install_jsregexp',
+	      tag = 'v2.*',
+        run = 'make install_jsregexp',
+        config = function()
+          require('plugins.luasnip')
+        end,
+        -- requires = {
+          -- 'saadparwaizl/cmp_luasnip',
+          -- 'rafamadriz/fiendly-snippets',
+        -- },
       }
     }
-  },
-  {'scalameta/nvim-metals',
+  })
+  use({
+    'scalameta/nvim-metals',
     requires = {'nvim-lua/plenary.nvim'}
-  },
-}
+  })
+end)
 
