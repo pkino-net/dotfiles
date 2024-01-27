@@ -73,10 +73,10 @@ require('packer').startup(function()
         config = function()
           require('plugins.luasnip')
         end,
-        -- requires = {
-          -- 'saadparwaizl/cmp_luasnip',
-          -- 'rafamadriz/fiendly-snippets',
-        -- },
+        requires = {
+          'saadparwaiz1/cmp_luasnip',
+          'rafamadriz/friendly-snippets',
+        },
       }
     }
   })
