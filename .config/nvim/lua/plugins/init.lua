@@ -84,5 +84,26 @@ require('packer').startup(function()
     'scalameta/nvim-metals',
     requires = {'nvim-lua/plenary.nvim'}
   })
+  use({
+    'nvimtools/none-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('plugins.none-ls')
+    end,
+  })
+  use({
+    'jay-babu/mason-null-ls.nvim',
+    event = {
+      'BufReadPre',
+      'BufNewFile',
+    },
+    dependencies = {
+      'williamboman/mason.nvim',
+      'nvimtools/none-ls.nvim',
+    },
+    opts  = {
+      handlers = {}
+    },
+  })
 end)
 
