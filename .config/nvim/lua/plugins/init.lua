@@ -2,7 +2,11 @@ vim.cmd('packadd packer.nvim')
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  use 'beikome/cosme.vim'
+  use({
+    'folke/tokyonight.nvim',
+    priority = 1000,
+    opts = {},
+  })
   use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
