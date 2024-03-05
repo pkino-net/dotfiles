@@ -21,4 +21,9 @@ if status is-interactive
     set -g theme_nerd_fonts yes
 
     abbr --add dmemo nvim '~/Documents/daily_memo/'(date '+%Y-%m-%d')'.md'
+
+    # pyenv
+    set -Ux PYENV_ROOT $HOME/.pyenv
+    fish_add_path $PYENV_ROOT/bin
+    pyenv init - | source
 end
