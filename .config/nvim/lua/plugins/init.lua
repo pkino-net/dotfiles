@@ -2,7 +2,11 @@ vim.cmd('packadd packer.nvim')
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  use 'beikome/cosme.vim'
+  use({
+    'folke/tokyonight.nvim',
+    priority = 1000,
+    opts = {},
+  })
   use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -44,12 +48,14 @@ require('packer').startup(function()
     end,
     requires = 'nvim-tree/nvim-web-devicons',
   })
-  use({'neovim/nvim-lspconfig',
+  use({
+    'neovim/nvim-lspconfig',
     config = function()
       require('plugins.nvim-lspconfig')
     end
   })
-  use({'williamboman/mason.nvim',
+  use({
+    'williamboman/mason.nvim',
     config = function()
       require('plugins.mason')
     end,
@@ -68,7 +74,7 @@ require('packer').startup(function()
       'hrsh7th/cmp-nvim-lsp',
       {
         'L3MON4D3/LuaSnip',
-	      tag = 'v2.*',
+        tag = 'v2.*',
         run = 'make install_jsregexp',
         config = function()
           require('plugins.luasnip')
@@ -82,7 +88,27 @@ require('packer').startup(function()
   })
   use({
     'scalameta/nvim-metals',
-    requires = {'nvim-lua/plenary.nvim'}
+    requires = { 'nvim-lua/plenary.nvim' }
+  })
+  use({
+    'nvimtools/none-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('plugins.none-ls')
+    end,
+  })
+  use({
+    'jay-babu/mason-null-ls.nvim',
+    event        = {
+      'BufReadPre',
+      'BufNewFile',
+    },
+    dependencies = {
+      'williamboman/mason.nvim',
+      'nvimtools/none-ls.nvim',
+    },
+    opts         = {
+      handlers = {}
+    },
   })
 end)
-
