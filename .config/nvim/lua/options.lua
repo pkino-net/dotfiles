@@ -16,5 +16,5 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end
 })
 
-vim.cmd('colorscheme tokyonight-storm')
+vim.cmd('colorscheme catppuccin-frappe')
 
