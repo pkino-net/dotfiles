@@ -3,9 +3,8 @@ vim.cmd('packadd packer.nvim')
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use({
-    'folke/tokyonight.nvim',
-    priority = 1000,
-    opts = {},
+    'catppuccin/nvim',
+    as = 'catppuccin'
   })
   use({
     'nvim-treesitter/nvim-treesitter',
