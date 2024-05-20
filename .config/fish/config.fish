@@ -15,7 +15,7 @@ if status is-interactive
     set fish_cursor_visual block
 
     # select bobthefish color scheme
-    set theme_color_scheme nord
+    set theme_color_scheme catppuccin-frappe
 
     # enable nerd font support in bobthefish
     set -g theme_nerd_fonts yes
