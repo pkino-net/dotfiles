@@ -1,0 +1,24 @@
+live_config_reload = true
+
+[scrolling]
+history = 10000
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 20
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "Cica"
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+opacity = 0.6
