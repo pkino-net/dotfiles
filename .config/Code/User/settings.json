@@ -1,0 +1,45 @@
+{
+  "workbench.colorTheme": "One Candy",
+  "window.zoomLevel": 2,
+  "editor.rulers": [80, 100],
+  "editor.fontFamily": "Cica",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontFamily": "Cica",
+  "jest.jestCommandLine": "yarn run test",
+  "jest.runMode": "watch",
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.handleKeys":{
+    "<C-p>": false,
+    "<C-n>": true,
+  },
+  "[scala]": {
+    "editor.suggestSelection": "first",
+    "editor.formatOnType": true
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  }
+}
