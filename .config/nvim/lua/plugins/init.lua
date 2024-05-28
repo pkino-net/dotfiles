@@ -1,5 +1,7 @@
 local plugins = {
-  {'wbthomason/packer.nvim'},
+  {
+    'wbthomason/packer.nvim'
+  },
   {
     'catppuccin/nvim',
     priority = 1000,
@@ -113,6 +115,9 @@ local plugins = {
     opts         = {
       handlers = {}
     },
+  },
+  {
+    'mattn/vim-maketable'
   }
 }
 
