@@ -1,5 +1,8 @@
 live_config_reload = true
 
+[shell]
+program = "fish"
+
 [scrolling]
 history = 10000
 
