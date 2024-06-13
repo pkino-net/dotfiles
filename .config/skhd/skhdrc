@@ -1,6 +1,9 @@
 # open terminal
 alt - return : /usr/local/bin/alacritty
 
+# open browser
+alt - f2 : open -n -a 'Google Chrome'
+
 # open mpv with url from clipboard
 shift + cmd - m : mpv $(pbpaste)
 
