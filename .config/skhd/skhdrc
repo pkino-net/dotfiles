@@ -13,8 +13,13 @@ alt - h : yabai -m window --focus west || yabai -m display --focus west
 alt - j : yabai -m window --focus south || yabai -m display --focus south
 alt - k : yabai -m window --focus north || yabai -m display --focus north
 alt - l : yabai -m window --focus east || yabai -m display --focus east
-alt - z : yabai -m window --focus stack.prev
-alt - c : yabai -m window --focus stack.next
+
+# stack window
+alt - s : yabai -m window --stack next
+
+# focus stack
+alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+alt - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
 # swap window
 shift + alt - x : yabai -m window --swap recent
@@ -148,13 +153,13 @@ alt - e : yabai -m window --toggle split
 alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle sticky (show on all spaces)
-alt - s : yabai -m window --toggle sticky
+# alt - s : yabai -m window --toggle sticky
 
 # toggle topmost (keep above other windows)
 alt - o : yabai -m window --toggle topmost
 
 # toggle picture-in-picture
-alt - p : yabai -m window --toggle border --toggle pip
+# alt - p : yabai -m window --toggle border --toggle pip
 
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
