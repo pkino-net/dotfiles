@@ -1,5 +1,14 @@
 live_config_reload = true
 
+[shell]
+program = "fish"
+args = [
+  "-l",
+  "-c",
+  "tmux"
+]
+
+
 [scrolling]
 history = 10000
 
