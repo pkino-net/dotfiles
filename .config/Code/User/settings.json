@@ -14,8 +14,9 @@
     "<C-n>": true,
   },
   "[scala]": {
+    "editor.tabSize": 2,
     "editor.suggestSelection": "first",
-    "editor.formatOnType": true
+    "editor.formatOnSave": true
   },
   "[javascript]": {
     "editor.tabSize": 2,
