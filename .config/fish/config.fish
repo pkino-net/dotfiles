@@ -26,4 +26,8 @@ if status is-interactive
     set -Ux PYENV_ROOT $HOME/.pyenv
     fish_add_path $PYENV_ROOT/bin
     pyenv init - | source
+
+    # direnv
+    set -x EDITOR nvim
+    eval (direnv hook fish)
 end
