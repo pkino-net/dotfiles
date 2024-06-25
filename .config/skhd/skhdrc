@@ -19,6 +19,7 @@ alt - q : yabai -m window --close
 
 # stack window
 alt - s : yabai -m window --stack next
+shift + alt - s : yabai -m space --layout bsp
 
 # focus stack
 alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
