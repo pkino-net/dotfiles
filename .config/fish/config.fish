@@ -30,4 +30,9 @@ if status is-interactive
     # direnv
     set -x EDITOR nvim
     eval (direnv hook fish)
+
+    # rbenv
+    set -Ux RBENV_ROOT $HOME/.rbenv
+    set -U fish_user_paths $RBENV_ROOT/bin $fish_user_paths
+    status is-interactive; and source (rbenv init -|psub)
 end
