@@ -30,7 +30,6 @@ x = 0
 y = 0
 
 [window]
-opacity = 0.6
 decorations = "Buttonless"
 
 # Catppuccin Frappe
