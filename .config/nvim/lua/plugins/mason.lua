@@ -3,6 +3,7 @@ require('mason').setup()
 local mason_lspconfig = require("mason-lspconfig")
 local servers = {
   ruby_lsp = {},
+  crystalline = {}
 }
 
 mason_lspconfig.setup {
