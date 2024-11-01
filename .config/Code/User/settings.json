@@ -42,5 +42,6 @@
     "**/.bloop": true,
     "**/.metals": true,
     "**/.ammonite": true
-  }
+  },
+  "editor.defaultFormatter": "crystal-lang-tools.crystal-lang"
 }
